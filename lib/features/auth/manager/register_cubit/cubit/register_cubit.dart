@@ -48,7 +48,7 @@ class RegisterCubit extends Cubit<RegisterState> {
           username: userName.text.trim(),
           phone: phone.text.trim(),
         );
-        
+
         result.fold(
           (String error) {
             emit(RegisterErrorState(error));

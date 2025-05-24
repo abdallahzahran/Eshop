@@ -9,7 +9,7 @@ import 'package:ecommerce_shop/features/profile/view/my_profile.dart';
 import 'package:ecommerce_shop/features/profile/widget/Custom_Circle_Avatar.dart';
 import 'package:ecommerce_shop/features/profile/widget/Profile_Menu_Item.dart';
 import 'package:ecommerce_shop/features/shoping_cart/views/cart_view.dart';
-import 'package:ecommerce_shop/features/sitting/views/setting_view.dart';
+import 'package:ecommerce_shop/features/setting/views/setting_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -79,7 +79,7 @@ class ProfileView extends StatelessWidget {
               icon: SvgPicture.asset(AppAssets.sitting),
               text: 'Settings',
               onTap: () {
-               MyNavigator.goTo(screen: SettingView());
+               MyNavigator.goTo(screen: SettingsView());
               },
             ),
             Divider(

@@ -27,7 +27,7 @@ abstract class AppAssets {
   static const String fav = "${basePathIcons}heart.svg";
   static const String add = "${basePathIcons}Group 34019.svg";
   static const String minus = "${basePathIcons}Group 34020.svg";
-  static const String arrowforward = "${basePathIcons}arrowback.svg";
+  static const String arrowforward = "${basePathIcons}Vector 4.svg";
   static const String logout = "${basePathIcons}Logout.svg";
   static const String sitting = "${basePathIcons}sitting.svg";
 

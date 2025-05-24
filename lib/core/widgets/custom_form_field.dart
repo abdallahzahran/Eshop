@@ -1,9 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
-import 'package:ecommerce_shop/core/utils/app_assets.dart';
-
 
 class CustomFormField extends StatelessWidget {
   const CustomFormField({
@@ -11,16 +6,20 @@ class CustomFormField extends StatelessWidget {
     required this.hintText,
     required this.prefixIcon,
     this.suffixIcon,
+    this.onSuffixIconPressed,
     required this.controller,
     required this.validator,
     this.obscureText = false,
   });
+
   final String hintText;
   final Widget prefixIcon;
   final Widget? suffixIcon;
   final bool obscureText;
+  final VoidCallback? onSuffixIconPressed;
   final TextEditingController controller;
   final FormFieldValidator<String> validator;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,23 +29,38 @@ class CustomFormField extends StatelessWidget {
         obscureText: obscureText,
         controller: controller,
         validator: validator,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(15),
-          suffixIcon:
-              hintText == 'Password'
-                  ? SvgPicture.asset(AppAssets.eye, fit: BoxFit.scaleDown)
-                  : suffixIcon,
+          contentPadding: const EdgeInsets.all(15),
+          suffixIcon: suffixIcon != null
+              ? GestureDetector(
+                  onTap: onSuffixIconPressed,
+                  child: suffixIcon,
+                )
+              : null,
           prefixIcon: prefixIcon,
-          fillColor: Color(0xFFF3F3F3),
+          fillColor: const Color(0xFFF3F3F3),
           filled: true,
           hintText: hintText,
-          hintStyle: TextStyle(color: Color(0xFF676767)),
+          hintStyle: const TextStyle(color: Color(0xFF676767)),
+
+          // ✅ إضافة هذا السطر لتقليل حجم الـ error message
+          errorStyle: const TextStyle(height: 0),
+
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFFA8A8A9)),
+            borderSide: const BorderSide(color: Color(0xFFA8A8A9)),
             borderRadius: BorderRadius.circular(10),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xFFA8A8A9)),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xFFA8A8A9)),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Color(0xFFA8A8A9)),
+            borderRadius: BorderRadius.circular(10),
           ),
         ),
       ),

@@ -53,7 +53,7 @@ class OnBoardingviewState extends State<OnBoardingview> {
                   child: const Text(
                     'Skip',
                     style: TextStyle(
-                        fontWeight: FontWeight.w600, color: Color(0XFFF83758)),
+                        fontWeight: FontWeight.w600, color: Color(0Xff000000)),
                   ),
                 ),
               ),
@@ -90,7 +90,7 @@ class OnBoardingviewState extends State<OnBoardingview> {
           showBackButton: true,
           back: const Text('Prev',
               style: TextStyle(
-                  fontWeight: FontWeight.w600, color: Color(0XFFF83758))),
+                  fontWeight: FontWeight.w600, color: Color(0XFFC4C4C4))),
           next: const Text('Next',
               style: TextStyle(
                   fontWeight: FontWeight.w600, color: Color(0XFFF83758))),
